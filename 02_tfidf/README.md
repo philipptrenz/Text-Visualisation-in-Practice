@@ -44,19 +44,19 @@ Biografie beim Deutschen Bundestag
 
 In the following all numbers as well as the chapters 'weblinks', 'literatur' and 'einzelnachweise' got removed and the text got converted to lower case.
 
-![article_length_by_parties](uploads/a63718a437d9c504e3cd60d6817c654b/article_length_by_parties.png)
+![article_length_by_parties](img/article_length_by_parties.png)
 
 As a first investigation the number of words per articles for each party were examined. Therefore the average and median was calculated. The bar chart shows evenly distributed average and median article lengths per party, only the articles of the two members of "Die Blaue" are conspicuously young. This could result from the fact that the persons associated with this party, Frauke Petry and Mario Mieruch, are quite controversial personalities.
 
-![unique_tokens_per_party](uploads/23ee014ca822a536c4cdebe2c8a7c53f/unique_tokens_per_party.png)
+![unique_tokens_per_party](img/unique_tokens_per_party.png)
 
 As a second step the uniqueness of tokens per party was considered. Therefore each article for each member of the German Bundestag got investigated towards the number of unique tokens in relation to the total number of tokens (in percent), the results were aggregated over each party. With just over 50%, the CDU has the less varied vocabulary, the most unique tokens per article has the AfD party. For the remaining parties average and median are relatively equally distributed.
 
-![cosine_similarity](uploads/c4e0caa89632b3f90b18540236ac0eb7/cosine_similarity.png)
+![cosine_similarity](img/cosine_similarity.png)
 
 To investigate the similarity in content of articles, the TF-IDF calculation got applied to all articles by using the __Scikit-learn TfidfVectorizer__ to generate data within the Vector Space Model. To visualize the similarity of the Wikipedia articles the cosine similarity measurement was applied for each member of the Bundestag by a 1-to-n dependence. Subsequently, an undirected graph with nodes as articles of all deputies of the German Bundestag and edges for the three most similar articles per member got generated. Since all the nodes with the names of the deputies were not expedient due to the number of 709 nodes, the nodes were instead colored in the respective party color.
 
-![cosine_similarity_zoomed](uploads/3207df56470dd695736d322053f5f8ac/figure_1.png)
+![cosine_similarity_zoomed](img/cosine_similarity_zoomed.png)
 
 When looking at the graph, some nodes with many edges are noticeable, so here is an enlarged view of the center of the graph, this time with labels. The nodes with the most edges belong to the following politicians:
 

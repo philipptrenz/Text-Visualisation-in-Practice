@@ -147,7 +147,7 @@ def plot_article_length_by_parties(df):
     plt.ylabel('words per article')
     plt.xticks(index + bar_width, parties)
     plt.legend()
-    plt.savefig('article_length_by_parties.png')
+    plt.savefig('img/article_length_by_parties.png')
 
 
 
@@ -193,7 +193,7 @@ def plot_unique_tokens_per_party(df):
     plt.ylabel('unique tokens per article (normalized) in percent')
     plt.xticks(index + bar_width, parties)
     plt.legend()
-    plt.savefig('unique_tokens_per_party.png')
+    plt.savefig('img/unique_tokens_per_party.png')
 
 
 def calc_tfidf(df):
@@ -268,7 +268,7 @@ def plot_cosine_similarity_graph_for_member_articles(tfidf_matrix, number_of_edg
 
     #nx.draw(G, with_labels=False, node_size=15, alpha=0.3, arrows=False)
 
-    plt.savefig('cosine_similarity.png')
+    plt.savefig('img/cosine_similarity.png')
 
 if __name__ == '__main__':
 
