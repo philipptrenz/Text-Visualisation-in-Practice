@@ -2,7 +2,7 @@
 
 > **Date:** 23.04. *(Due: 23.04.)*  
 > **Name:** `PhTr` Philipp Trenz  
-> **Code:** [git](https://github.com/philipptrenz/Text-Visualisation-in-Practice/tree/master/02_tfidf) 
+> **Code:** [git](https://github.com/philipptrenz/Text-Visualisation-in-Practice/tree/master/02_tfidf)  
 > **Session:** [TFIDF/VSM + Visualization](../index)
 
 ----
