@@ -11,7 +11,7 @@
 
 The last session was focused on generating high dimensional data using the [tf-idf](https://en.wikipedia.org/wiki/Tf–idf) algorithm. Therefore the Wikipedia articles of all current 709 members of the German Bundestag got parsed and used as a database for the algorithm. In this this session, the focus is on reducing dimensions to 2 or 3 while keeping the containing information as high as possible. 
 
-## Approach description
+## Approach
 
 In the lecture some algorithms for the reduction of dimensions were presented, among others [PCA](https://en.wikipedia.org/wiki/Principal_component_analysis) and [t-SNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding). The Machine Learning framework _scikit-learn_, which was already used to calculate the tf-idf vectors for the Wikipedia articles, also provides implementations for both of the algorithms. 
 
@@ -19,7 +19,7 @@ As the _TfidfVectorizer_ interface of the framework generates a sparse dataset, 
 
 Since the database was created on the basis of [this](https://de.wikipedia.org/wiki/Liste_der_Mitglieder_des_Deutschen_Bundestages_(19._Wahlperiode)#Abgeordnete) Wikipedia table, in addition to the names of the members of the German Bundestag and the cross-references to the respective Wikipedia articles, the columns on party affiliation, year of the politician and state of origin were recorded. These data are now used to discover interesting relationships based on the tf-idf vector data reduced with t-SNE.
 
-## Show result(s)
+## Results
 
 The following Figure 1 shows the result of the dimensionality reduced TF-IDF vectors per article based on the t-SNE algorithm, while the colors represent age groups of the politicians. 
 
@@ -37,7 +37,7 @@ With reference to the article length (number of words per article), in contrast 
 
 ![Figure 4](img/fig4_tsne_plot_per_party_with_article_size.png)
 
-## Discuss findings/hypothesis
+## Findings
 
 Regarding Figure 1, it can be stated that the colors of the data points are evenly distributed, so that no clustering regarding age groups can be found. 
 
