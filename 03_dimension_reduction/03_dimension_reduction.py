@@ -65,10 +65,17 @@ def plot_with_tsne_by_age(df, X_embedded, show=True):
         ax.legend()
         ax.grid(True)
 
+    plt.title('Figure 1: T-SNE reduced tf-idf dataset, grouped by age')
+
+    # Put legend outside of plot
+    box = ax.get_position()
+    ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+    ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+
     if show: plt.show()
 
     print('saving plot ...')
-    fig.savefig('img/tsne_plot_per_age.png')
+    fig.savefig('img/fig1_tsne_plot_per_age.png')
 
 def plot_with_tsne_by_state(df, X_embedded, show=True):
 
@@ -92,10 +99,17 @@ def plot_with_tsne_by_state(df, X_embedded, show=True):
         ax.legend()
         ax.grid(True)
 
+    plt.title('Figure 2: T-SNE reduced tf-idf dataset, grouped by state')
+
+    # Put legend outside of plot
+    box = ax.get_position()
+    ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+    ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+
     if show: plt.show()
 
     print('saving plot ...')
-    fig.savefig('img/tsne_plot_per_state.png')
+    fig.savefig('img/fig2_tsne_plot_per_state.png')
 
 
 def plot_with_tsne_by_party(df, X_embedded, show=True):
@@ -113,6 +127,7 @@ def plot_with_tsne_by_party(df, X_embedded, show=True):
         # color hack
         if party == 'Blaue': color = '#0000FF'
         elif party == 'parteilos': color = '#FF9900'
+        elif party == 'CSU': color = '#666262'
 
         # get all indices for selected party
         indices = df.index[df['party'] == party].tolist()
@@ -127,10 +142,17 @@ def plot_with_tsne_by_party(df, X_embedded, show=True):
         ax.legend()
         ax.grid(True)
 
+    plt.title('Figure 3: T-SNE reduced tf-idf dataset, grouped by party')
+
+    # Put legend outside of plot
+    box = ax.get_position()
+    ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+    ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+
     if show: plt.show()
 
     print('saving plot ...')
-    fig.savefig('img/tsne_plot_per_party.png')
+    fig.savefig('img/fig3_tsne_plot_per_party.png')
 
 def plot_with_tsne_by_party_with_wordcount(df, X_embedded, show=True):
 
@@ -167,10 +189,17 @@ def plot_with_tsne_by_party_with_wordcount(df, X_embedded, show=True):
         ax.legend()
         ax.grid(True)
 
+    plt.title('Figure 4: T-SNE reduced tf-idf dataset, grouped by party and in terms of the word count of the articles')
+
+    # Put legend outside of plot
+    box = ax.get_position()
+    ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+    ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+
     if show: plt.show()
 
     print('saving plot ...')
-    fig.savefig('img/tsne_plot_per_party_with_article_size.png')
+    fig.savefig('img/fig4_tsne_plot_per_party_with_article_size.png')
 
 def plot_with_3d_tsne_by_party(docs, show=True):
     print('calculating 3D t-SNE ...')
@@ -210,10 +239,17 @@ def plot_with_3d_tsne_by_party(docs, show=True):
         ax.legend()
         ax.grid(True)
 
+    plt.title('Figure 5: T-SNE reduced tf-idf dataset in 3d, grouped by party')
+
+    # Put legend outside of plot
+    box = ax.get_position()
+    ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+    ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+
     if show: plt.show()
 
     print('saving plot ...')
-    fig.savefig('img/tsne_3d_plot_per_party.png')
+    fig.savefig('img/fig5_tsne_3d_plot_per_party.png')
 
 
 if __name__ == '__main__':
@@ -231,14 +267,17 @@ if __name__ == '__main__':
 
 
 
+
+    plt.rcParams["figure.figsize"] = (10, 5)
+
     print('calculating t-SNE ...')
     X = docs.toarray()
     from sklearn.manifold import TSNE
     tsne = TSNE(n_components=2)
     X_embedded = tsne.fit_transform(X)
 
-    plot_with_tsne_by_age(df, X_embedded, show=False)
-    plot_with_tsne_by_state(df, X_embedded, show=False)
-    plot_with_tsne_by_party(df, X_embedded, show=False)
-    plot_with_3d_tsne_by_party(docs, show=False)
+    plot_with_tsne_by_age(df, X_embedded, show=True)
+    plot_with_tsne_by_state(df, X_embedded, show=True)
+    plot_with_tsne_by_party(df, X_embedded, show=True)
     plot_with_tsne_by_party_with_wordcount(df, X_embedded, show=False)
+    #plot_with_3d_tsne_by_party(docs, show=False)
