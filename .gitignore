@@ -2,3 +2,4 @@
 .DS_Store
 *.pdf
 .idea/
+__pycache__/
