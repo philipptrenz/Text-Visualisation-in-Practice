@@ -50,3 +50,9 @@ In Figure 3, in general, the articles attributable to the parties are clearly de
 Even the ideological origin and orientation of the politicians [Mario Mieruch](https://de.wikipedia.org/wiki/Mario_Mieruch) and [Frauke Petry](https://de.wikipedia.org/wiki/Frauke_Petry), who moved into the Bundestag with the AfD and in the meantime have converted to the [Die blaue Partei](https://de.wikipedia.org/wiki/Die_blaue_Partei), can be deduced from the scatter plot. The political proximity of the two Union parties, the CDU and the CSU, can also be recognized by a smooth transition of the two clusters. The two non-party politicians are clearly assignable: [Uwe Kamann](https://de.wikipedia.org/wiki/Uwe_Kamann) moved for the AfD in the Bundestag and left the party in December 2018. [Marco Bülow](https://de.wikipedia.org/wiki/Marco_Bülow), however, was a member of the SPD and also resigned in 2018 from the party.
 
 In Figure 4 an attempt was made to incorporate further information in the 2D representation of the plot. The additionally shown length of the article could give information about the importance or disputedness of the associated person, but this was not further investigated for time reasons.
+
+Further investigations of this kind could focus on the following points:
+
+* Relevance of the position of an article of a politician in the cluster of the associated party
+* Significance of textual proximity to "party boundaries" in the plot
+* Meaningfulness of the t-SNE clusters on the basis of articles on members of parliament regarding the classification of party affiliation of state or local politicians
