@@ -242,28 +242,3 @@ if __name__ == '__main__':
     plot_with_tsne_by_party(df, X_embedded, show=False)
     plot_with_3d_tsne_by_party(docs, show=False)
     plot_with_tsne_by_party_with_wordcount(df, X_embedded, show=False)
-
-
-
-
-    '''
-    # PCA
-    from sklearn.decomposition import PCA
-    pca = PCA()
-    pca.fit(docs)
-    print(docs.shape)
-    '''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
