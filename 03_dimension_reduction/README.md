@@ -45,4 +45,8 @@ Also in Figure 2, the data points look equally distributed – Except for the st
 
 This makes sense as soon as you compare Figure 3. There, the single-color cluster of the CSU party can be seen congruent. This party is an exclusively Bavarian party, which explains the origin of the politicians of this cluster.
 
-In Figure 3, in general, the articles attributable to the parties are clearly delineated in the plot, and even clear demarcations of individual clusters from other parties are discernible.
+In Figure 3, in general, the articles attributable to the parties are clearly delineated in the plot, and even clear demarcations of individual clusters from other parties are discernible. It is quite remarkable that such a clear classification of the Wikipedia article on members of the German Bundestag is possible only through statistical analysis of the word occurrence and without any understanding of the text.
+
+Even the ideological origin and orientation of the politicians Mario Mieruch and Frauke Petry, who moved into the Bundestag with the AfD and in the meantime have converted to the "Die blaue Partei", can be deduced from the scatter plot. The political proximity of the two Union parties, the CDU and the CSU, can also be recognized by a smooth transition of the two clusters. The two non-party politicians are clearly assignable: Uwe Kamann moved for the AfD in the Bundestag and left the party in December 2018. Marco Bülow, however, was a member of the SPD and also resigned in 2018 from the party.
+
+In Figure 4 an attempt was made to incorporate further information in the 2D representation of the plot. The additionally shown length of the article could give information about the importance or disputedness of the associated person, but this was not further investigated for time reasons.
