@@ -41,7 +41,7 @@ With reference to the article length (number of words per article), in contrast 
 
 Regarding Figure 1, it can be stated that the colors of the data points are evenly distributed, so that no clustering regarding age groups can be found. 
 
-Also in Figure 2, the data points look equally distributed – Except for the state _Bavaria_ (in the legend: _Bayern_), where one bigger cluster (with its center approximately at \[-100, -20\]). 
+Also in Figure 2, the data points look equally distributed – Except for the state _Bavaria_ (in the legend: _Bayern_), where one bigger cluster (with its center approximately at \[10, 5\]). 
 
 This makes sense as soon as you compare Figure 3. There, the single-color cluster of the CSU party can be seen congruent. This party is an exclusively Bavarian party, which explains the origin of the politicians of this cluster.
 
