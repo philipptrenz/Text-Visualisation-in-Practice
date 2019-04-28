@@ -21,16 +21,24 @@ Since the database was created on the basis of [this](https://de.wikipedia.org/w
 
 ## Show result(s)
 
-The following plot shows the result of the dimensionality reduction to 2d with the t-SNE algorithm, while the colors represent age groups of the members. 
+The following Figure 1 shows the result of the dimensionality reduced TF-IDF vectors per article based on the t-SNE algorithm, while the colors represent age groups of the politicians. 
 
-![t-sne plot per age](img/tsne_plot_per_age.png)
+![Figure 1](img/fig1_tsne_plot_per_age.png)
 
-![t-sne plot per state](img/tsne_plot_per_state.png)
+In Figure 2, the vector representation of the articles gets represented in 3d in relation to the German home states of the politicians.
 
-![t-sne plot per party](img/tsne_plot_per_party.png)
+![Figure 2](img/fig2_tsne_plot_per_state.png)
 
-![t-sne plot per party with article size](img/tsne_plot_per_party_with_article_size.png)
+![Figure 3](img/fig3_tsne_plot_per_party.png)
 
-![t-sne 3d plot per party](img/tsne_3d_plot_per_party.png)
+![Figure 4](img/fig4_tsne_plot_per_party_with_article_size.png)
 
 ## Discuss findings/hypothesis
+
+Regarding Figure 1, it can be stated that the colors of the data points are evenly distributed, so that no clustering regarding age groups can be found. 
+
+Also in Figure 2, the data points look equally distributed – Except for the state _Bavaria_ (in the legend: _Bayern_), where one bigger cluster (with its center approximately at \[-100, -20\]). 
+
+This makes sense as soon as you compare Figure 3. There, the single-color cluster of the CSU party can be seen congruent. This party is an exclusively Bavarian party, which explains the origin of the politicians of this cluster.
+
+In Figure 3, in general, the articles attributable to the parties are clearly delineated in the plot, and even clear demarcations of individual clusters from other parties are discernible.
