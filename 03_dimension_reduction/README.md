@@ -29,7 +29,11 @@ In Figure 2, the vector representation of the articles gets represented in 3d in
 
 ![Figure 2](img/fig2_tsne_plot_per_state.png)
 
+Figure 3 illustrates the vector text representation with respect to the parties of the politicians.
+
 ![Figure 3](img/fig3_tsne_plot_per_party.png)
+
+With reference to the article length (number of words per article), in contrast to Figure 3 in Figure 4, this is additionally illustrated by the scaling of the points.
 
 ![Figure 4](img/fig4_tsne_plot_per_party_with_article_size.png)
 
