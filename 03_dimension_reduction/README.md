@@ -37,6 +37,14 @@ With reference to the article length (number of words per article), in contrast 
 
 ![Figure 4](img/fig4_tsne_plot_per_party_with_article_size.png)
 
+To gain insight into the relevant contents of the articles, which obviously give information about the party affiliation of a Bundestag politician, were created as a supplement to the previous assignment wordclouds. These are based on the tf-idf vectors, selected by party affiliation. Here are three illustrations selected for illustration, all graphics can be found [in the GitHub repository](https://github.com/philipptrenz/Text-Visualisation-in-Practice/tree/master/03_dimension_reduction/img).
+
+![wordcloud Grüne](img/wordcloud_Grüne.png)
+
+![wordcloud SPD](img/wordcloud_SPD.png)
+
+![wordcloud AfD](img/wordcloud_AfD.png)
+
 ## Findings
 
 Regarding Figure 1, it can be stated that the colors of the data points are evenly distributed, so that no clustering regarding age groups can be found. 
