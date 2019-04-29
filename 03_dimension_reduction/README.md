@@ -64,3 +64,16 @@ Further investigations of this kind could focus on the following points:
 * Relevance of the position of an article of a politician in the cluster of the associated party
 * Significance of textual proximity to "party boundaries" in the plot
 * Meaningfulness of the t-SNE clusters on the basis of articles on members of parliament regarding the classification of party affiliation of state or local politicians
+
+
+## Update \[2019-04-29\]
+
+As the names of the parties have a very high impact on the similarity of the Wikipedia articles, as the wordclouds show, I wondered how clear the t-SNE algorithm can still cluster the articles by party if the party names get removed; Extending the stop words list with `[ 'afd', 'blaue', 'cdu', 'csu', 'union', 'fdp', 'grüne', 'linke', 'spd' ]`, Figure 5 shows the result.
+
+![Figure 5](img/fig5_tsne_plot_per_party_without_party_names.png)
+
+Even by removing the shortcuts of the parties, the Wikipedia articles still have a high similarity to articles of politicians with the same party affiliation, as the result of the t-SNE reduction shows. The groupings by parties are not as distinct as by considering the party shortcuts within the articles, but the articles related to the AfD and FDP are very grouped by each other. The parties Grüne, CSU, CDU, SPD all seem to have been split into two clusters. Only the articles related to the Linke seem not to be clustered anymore. 
+
+Further investigations focusing on the change of the results by removing significant tokens from the articles could be very interesting and enlightening. However, due to time constraints, they will not be performed at this point.
+
+ 

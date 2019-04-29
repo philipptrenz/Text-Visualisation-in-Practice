@@ -252,6 +252,64 @@ def plot_with_3d_tsne_by_party(docs, show=True):
     fig.savefig('img/fig5_tsne_3d_plot_per_party.png')
 
 
+
+def plot_with_tsne_by_party_excluding_party_tokens(df, show=True):
+
+    print('generating TF-IDF vectors with extended stopwords ...')
+    # extends stop words by party names
+    STOP_WORDS_EXTENDED = STOP_WORDS.extend([
+        'afd', 'blaue', 'cdu', 'csu', 'union', 'fdp', 'grüne', 'linke', 'spd'
+    ])
+    vectorizer = TfidfVectorizer(analyzer='word', stop_words=STOP_WORDS_EXTENDED)
+    docs = vectorizer.fit_transform(df['article'])
+
+    print('calculating t-SNE ...')
+    X = docs.toarray()
+    from sklearn.manifold import TSNE
+    tsne = TSNE(n_components=2)
+    X_embedded = tsne.fit_transform(X)
+
+    print('generating plot ...')
+    # Plot
+    fig, ax = plt.subplots()
+    res = np.array(X_embedded)
+
+    for party in df['party'].unique():
+
+        # get related color
+        color = df.loc[df['party'] == party]['color'].unique()
+
+        # color hack
+        if party == 'Blaue': color = '#0000FF'
+        elif party == 'parteilos': color = '#FF9900'
+        elif party == 'CSU': color = '#666262'
+
+        # get all indices for selected party
+        indices = df.index[df['party'] == party].tolist()
+
+        # get all related values from t-SNE result
+        res_for_party = np.array(list(res[indices]))
+
+        x = res_for_party[:,0]
+        y = res_for_party[:,1]
+
+        ax.scatter(x, y, c=color, label=party, alpha=0.5)
+        ax.legend()
+        ax.grid(True)
+
+    plt.title('Figure 5: T-SNE reduced tf-idf dataset, grouped by party and excluding party names')
+
+    # Put legend outside of plot
+    box = ax.get_position()
+    ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+    ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+
+    if show: plt.show()
+
+    print('saving plot ...')
+    fig.savefig('img/fig5_tsne_plot_per_party_without_party_names.png')
+
+
 if __name__ == '__main__':
 
     loader = DataLoader()
@@ -263,7 +321,7 @@ if __name__ == '__main__':
     docs = vectorizer.fit_transform(df['article'])
 
 
-    #plot_wordcloud_per_party(df, docs, vectorizer.vocabulary_.items())
+    plot_wordcloud_per_party(df, docs, vectorizer.vocabulary_.items())
 
 
 
@@ -281,3 +339,5 @@ if __name__ == '__main__':
     plot_with_tsne_by_party(df, X_embedded, show=True)
     plot_with_tsne_by_party_with_wordcount(df, X_embedded, show=False)
     #plot_with_3d_tsne_by_party(docs, show=False)
+
+    plot_with_tsne_by_party_excluding_party_tokens(df)
