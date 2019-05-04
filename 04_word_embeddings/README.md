@@ -69,11 +69,12 @@ affiliation.
 Since Figure 2 is not very meaningful due to the different vector spaces
 of the algorithms and the poor optical comparability of points, the data
 in Figure 3 was processed in another form. In a matrix, the Euclidean
-distances between all tokens were calculated for the two algorithms. The
-subsequent normalization to the maximum distance per algorithm removes
-the different scaling of the algorithms and makes the results more
+distances between the high dimensional word representations of all
+tokens were calculated for the two algorithms. The subsequent
+normalization to the maximum distance per algorithm removes the
+different scaling of the algorithms and makes the results more
 comparable. By color coding, the normalized values were finally
-displayed in a heatmap. 
+displayed in a heatmap.
 
 ![Fig 3](img/fig3_distances_of_vectors.png)
 
