@@ -103,6 +103,8 @@ class DataLoader:
         words = self.remove_punctuation(words)
         words = self.replace_numbers(words)
         words = self.remove_stopwords(words, lang)
+        words = self.stem_words(words)
+        words = self.lemmatize_verbs(words)
         return words
 
     '''

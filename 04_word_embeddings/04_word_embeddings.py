@@ -142,23 +142,7 @@ def plot_distances_between_vectors(X, model, vocab, words, labels, show=False):
     if show: plt.show()
 
     plt.savefig("img/fig3_distances_of_vectors.png")
-    """
-    # get correlation matrix
-    corr = iris.corr()
-    fig, ax = plt.subplots()
-    # create heatmap
-    im = ax.imshow(corr.values)
-    
-    # set labels
-    ax.set_xticks(np.arange(len(corr.columns)))
-    ax.set_yticks(np.arange(len(corr.columns)))
-    ax.set_xticklabels(corr.columns)
-    ax.set_yticklabels(corr.columns)
-    
-    # Rotate the tick labels and set their alignment.
-    plt.setp(ax.get_xticklabels(), rotation=45, ha="right",
-             rotation_mode="anchor")
-    """
+
 
 
 
@@ -221,6 +205,6 @@ if __name__ == '__main__':
     colors = [ 'g', 'b']
     labels = ['vec2word', 'fasttext']
 
-    #plot(X, vocab, colors, labels, show=False)
-    #plot_party_names(X, model, vocab, PARTIES, colors, labels, show=False)
+    plot(X, vocab, colors, labels, show=False)
+    plot_party_names(X, model, vocab, PARTIES, colors, labels, show=False)
     plot_distances_between_vectors(X, model, vocab, PARTIES, labels, show=False)
