@@ -1,4 +1,4 @@
-# ...
+# Insight into word embeddings based on wikipedia articles (or vice versa)
 
 > **Date:** 04.05. *(Due: 07.05.)*  
 > **Name:** `PhTr` Philipp Trenz  
@@ -78,5 +78,37 @@ displayed in a heatmap.
 
 ![Fig 3](img/fig3_distances_of_vectors.png)
 
-
 ## Findings
+
+Due to personal time constraints for this weeks assignment it was not
+possible to explore the possibilities of word embeddings extensively.
+Figures 1 and 2 barely contain meaningful information. Though, the
+visualisations of Figure 3 contain insights into the differences of the
+algorithms _vec2word_ and _fasttext_ as well as give interesting
+information about the statistical and semantic differences of the
+shortcuts of the parties.
+
+
+The matrix based on the normalized distances between vectors generated
+by vec2word contains a lot word combinations with distances almost zero
+(`blaue – grüne`, `blaue – linke`, `union – grüne`, `union – linke`,
+`grüne – union` and `grüne – linke`) as well as with great distances
+(AfD party to all others). In retrospect to last weeks findings, where
+t-SNE grouped tf-idf vectors of `cdu` and its counterpart `csu` near to
+each other, vec2word also generates vectors for these parties with low
+distance to each other.
+
+In contrast to this, the matrix based on fasttext vectors shows a
+greater variety of distances between the vectors, resulting in a more
+colorful representation. Striking is the token combination with the
+largest distance: `grüne – cdu`. In addition, the visualization shows
+significantly more distances in the middle range compared to the
+vec2word-based ones. 
+
+The investigations carried out regarding the methods of word embeddings
+can not provide any comprehensive insight regarding the power of the
+methods or the quality of the results. In order to deepen the knowledge,
+further investigations concerning the algorithm-specific possibilities
+and the testing of different parameterizations would be necessary.
+Nevertheless, with the investigations listed here, a basic understanding
+of the application and possibilities of these methods could be obtained.
