@@ -29,4 +29,34 @@ algorithm out of the [gensim](https://radimrehurek.com/gensim/) Python library w
 
 ## Results
 
+In order to obtain an initial assessment of the possibilities of the LDA
+algorithm on the basis of the selected data set, the algorithm was
+trained after the normalization of the text, and the top 10 of the
+generated topics were output, each with the five strongest weighted
+words, as Figure 1 shows.
+
+![Figure 1](img/01_topics.png)
+
+The output made it clear that the removal of stop words performed during
+normalization was insufficient in that the LDA algorithm generated the
+most highly valued topics based on words of low information content. For
+this reason, additional stop words were manually removed from the
+documents and another model and plot were generated.
+
+![Figure 2](img/02_topics.png)
+
+The results in Figure 2 shows that the extended filtering of words did
+not allow the LDA algorithm to produce satisfying topic compilations.
+That all politicians are members of the German Bundestag is obviously
+clear from the respective Wikipedia articles and was successfully
+recognized by LDA, which is generally pleasing. However, since the
+selection of documents already implies this knowledge, this insight of
+the LDA model is of little relevance. Therefore, once again, the
+documents underlying the LDA model were manually edited to remove
+additional tokens so that the algorithm can hopefully find topics based
+on relevant information. The plotted result is shown in Figure 3.
+
+![Figure 3](img/03_topics.png)
+
+
 ## Findings

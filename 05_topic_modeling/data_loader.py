@@ -15,10 +15,10 @@ class DataLoader:
     '''
     Constructor
     '''
-    def __init__(self, path='members_bundestag.pkl'):
+    def __init__(self, path='members_bundestag.pkl', force=False):
 
         # save retrieved data as pickle and load if it already exists
-        if not os.path.isfile(path):
+        if force or not os.path.isfile(path):
             url_members_german_bundestag = 'https://de.wikipedia.org/wiki/Liste_der_Mitglieder_des_Deutschen_Bundestages_(19._Wahlperiode)'
             self.dataframe = self.get_all_members_of_bundestag(url_members_german_bundestag)
             print('saving pickle ...')
@@ -98,11 +98,11 @@ class DataLoader:
         return lemmas
 
     def normalize(self, words, lang='english'):
+        words = self.remove_stopwords(words, lang)
         words = self.remove_non_ascii(words)
         words = self.to_lowercase(words)
         words = self.remove_punctuation(words)
         words = self.replace_numbers(words)
-        words = self.remove_stopwords(words, lang)
         words = self.stem_words(words)
         words = self.lemmatize_verbs(words)
         return words
