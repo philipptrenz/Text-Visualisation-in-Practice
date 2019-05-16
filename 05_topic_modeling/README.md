@@ -1,6 +1,6 @@
 # Topic Modeling on Wikipedia articles of politicians
 
-> **Date:** 14.05. *(Due: 14.05.)*  
+> **Date:** 16.05. *(Due: 14.05.)*  
 > **Name:** `PhTr` Philipp Trenz  
 > **Code:**
 > [git](https://github.com/philipptrenz/Text-Visualisation-in-Practice/tree/master/05_topic_modeling)  
