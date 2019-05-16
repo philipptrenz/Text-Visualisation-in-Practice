@@ -1,4 +1,4 @@
-# Topic Modeling on Wikipedia articles of German politicians
+# Topic Modeling on Wikipedia articles of politicians
 
 > **Date:** 14.05. *(Due: 14.05.)*  
 > **Name:** `PhTr` Philipp Trenz  
@@ -60,3 +60,11 @@ on relevant information. The plotted result is shown in Figure 3.
 
 
 ## Findings
+
+After the elaborate manual correction of the documents, the trained LDA
+model provides the distinct topics shown in Figure 3. At first glance,
+the five most influential words for the compilation do not reveal
+clearly distinguishable topic blocks, suggesting an underdistinct set of
+documents. On closer examination, which is not possible in the context
+of this assignment, however, interesting connections between the tokens
+might be discoverable.
