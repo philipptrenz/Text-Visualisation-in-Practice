@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 import json
-
+from multiprocessing import Process, Manager
 
 from gensim.models import TfidfModel
 from gensim.models import FastText
@@ -14,25 +14,45 @@ from sklearn.metrics.pairwise import cosine_similarity
 def calculate_nodes(dct, df):
 
     print('preparing node export')
-    all_nodes = []
 
-    for token_id in dct:
-        token = dct[token_id]
-        count = 0
+    def worker(all_nodes, process_id, dct, df, min, max):
+        if max > len(dct): max = len(dct)
 
-        for index, row in df.iterrows():
-            if token in row['article']: count += 1
+        for token_id in range(min, max):
 
-        #if count > 10:  # min count
-        all_nodes.append({
-            'single_couses': 0,
-            'name': token,
-            'uses': count
-        })
+            token = dct[token_id]
+            count = 0
 
-        print('processed', len(all_nodes), 'of', len(dct), 'nodes')
+            for index, row in df.iterrows():
+                if token in row['article']: count += 1
 
-    return all_nodes
+            #if count > 10:  # min count
+            all_nodes.append({
+                'single_couses': 0,
+                'name': token,
+                'uses': count
+            })
+
+            print(int((token_id-min)/(max-min)*100),'% (worker', process_id, ')')
+
+    with Manager() as manager:
+        workers = 20
+        workload = int(len(dct)/workers)
+
+        all_nodes = manager.list()  # <-- can be shared between processes.
+        processes = []
+        for i in range(workers):
+
+            min = i * workload
+            max = (i+1) * workload
+
+            p = Process(target=worker, args=(all_nodes,i, dct, df, min, max))  # Passing the list
+            p.start()
+            processes.append(p)
+        for p in processes:
+            p.join()
+
+        return list(all_nodes)
 
 
 def get_all_nodes(dct, df):
@@ -40,11 +60,11 @@ def get_all_nodes(dct, df):
     all_nodes_file = 'nodes_all.json'
 
     if not os.path.isfile(all_nodes_file):
+
+         # calculate all nodes
+        all_nodes = calculate_nodes(dct, df)
+
         with open(all_nodes_file, 'w') as f:
-
-            # calculate all nodes
-            all_nodes = calculate_nodes(dct, df)
-
             f.write(json.dumps(all_nodes))
     else:
         with open(all_nodes_file) as f:
@@ -72,7 +92,7 @@ def calculate_edges(export_nodes, model):
             })
 
         i += 1
-        print('processed', i, 'of', len(all_edges), 'edges')
+        print('processed', i, 'of', len(export_nodes), 'edges')
 
     return all_edges
 
@@ -80,11 +100,11 @@ def get_all_edges(export_nodes, model):
     all_edges = []
     all_edges_file = 'links_all.json'
     if not os.path.isfile(all_edges_file):
+
+         # calculate all edges
+        all_edges = calculate_edges(export_nodes, model)
+
         with open(all_edges_file, 'w') as f:
-
-            # calculate all edges
-            all_edges = calculate_edges(export_nodes, model)
-
             f.write(json.dumps(all_edges))
     else:
         with open(all_edges_file) as f:
@@ -181,7 +201,6 @@ if __name__ == '__main__':
     '''
     # get the 1000 most significant edges
     export_edges=sorted(all_edges, key=lambda k:k['value'])[-1000:]
-    print('export_edges', export_edges)
 
 
     ####################################
