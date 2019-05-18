@@ -35,6 +35,11 @@ graph.
 The following pictures show parts of the graph, which was rendered with
 D3.js.
 
+
+
+![](img/00.png)
+
+
 ![](img/03.png)
 
 
@@ -51,3 +56,21 @@ D3.js.
 
 
 ## Findings
+
+The calculation of the co-occurance of each of the approximately 30,000
+tokens over the 709 Wikipedia articles of politicians in Python was
+extremely computationally demanding. Therefore, a multi-process
+calculation was performed for this task, which still led to a
+calculation time of about half an hour. The fact that the calculation
+was already so elaborate for this dataset was very interesting for me.
+The use of analytic engines like
+[Apache Spark](https://spark.apache.org) could bring significant
+performance improvements at this point. 
+
+Due to the introduced threshold value for the cosine similarity of nodes
+contains many subgraphs, which sometimes consist of only one node, as
+Figure 1 shows. In particular, some of the larger subgraphs depict
+similarities in the spelling of words, as shown in Figures 2 and 3.
+Others, however, also create a clustering of content, like the graph in
+Figure 4. Other subgraphs, as in Figure 5, do not show any meaningful
+connection of the clustered nodes.
