@@ -74,3 +74,10 @@ similarities in the spelling of words, as shown in Figures 2 and 3.
 Others, however, also create a clustering of content, like the graph in
 Figure 4. Other subgraphs, as in Figure 5, do not show any meaningful
 connection of the clustered nodes.
+
+Finally, it can be said that the calculated graph probably provides more
+information about the results on applying a fasttext model on Wikipedia
+articles by politicians than interesting content conclusions on the text
+corpus. The reason for this may be a combination of the selection of
+statistical methods and the very similar types of content and structure
+of the selected Wikipedia articles.
