@@ -8,3 +8,8 @@ __pycache__/
 *.state
 *.id2word
 *.json
+*.zip
+*.jar
+
+
+corenlp/
