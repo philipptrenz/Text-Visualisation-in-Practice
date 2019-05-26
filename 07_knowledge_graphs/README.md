@@ -1,4 +1,4 @@
-# ...
+# Knowledge graphs about the House of Commons (UK)
 
 > **Date:** 24.05. *(Due: 28.05.)*  
 > **Name:** `PhTr` Philipp Trenz  
@@ -189,7 +189,7 @@ processed in this manner:
 ![Fig 7](img/graph_mike_penning_round_2.png)
 
 
-Additional, these figures provide interesting insights:
+Additionally, these figures provide interesting insights:
 
 ![Fig 8](img/graph_kate_osamor_round_2.png)
 
@@ -197,11 +197,11 @@ Additional, these figures provide interesting insights:
 
 
 
-Also some graphs became very large and should be in principle displayed
-in better ways ... 
+Also some graphs became very large ... 
 
 ![Fig 10](img/graph_boris_johnson_round_2.png)
 
-... and others contain wrong or misleading information ...
+... and others contain wrong or misleading information (not she but her
+mother died 1992) ...
 
 ![Fig 11](img/graph_colleen_fletcher_round_2.png)
