@@ -52,8 +52,8 @@ nlp = StanfordCoreNLP('http://localhost:9000')
 
 After mining the new dataset, normalizing the Wikipedia articles and
 setting up the processing pipeline, which took quite long due to several
-software and compatibility issues, the CoreNLP processing results
-exemplary in the following for the MP Stephen Kinnock:
+software and compatibility issues, the CoreNLP processing ring for the MP Stephen Kinnock:esults
+exemplary in the follow
 
 ```
 Stephen Kinnock:
@@ -76,9 +76,20 @@ Stephen Kinnock:
 		 ('was European Commissioner of', 'His father', 'European Commission')
 	'His mother is a former Labour Party MEP.'
 		 ('is', 'His mother', 'former Labour Party MEP')
+    ...
 ```
 
-Looking at all tuples over all 650 Wikipedia articles of the members of
+As the dataset of the 650 Wikipedia articles is quite large, I began
+with a reduced dataset in **Round 1**, which was limited to the first
+paragraph of each article. In Round 2 instead, I used the first two
+paragraphs of each article, but to visualize the data appropriately, the
+visualization got reduced to only display triples, that contain the
+politicians name. I used the networkx library in Python for the
+visualization.
+
+### Round 1
+
+Looking at all triples over all 650 Wikipedia articles of the members of
 UK House of Commons, which are detected by OpenIE, the following
 distribution of predicates can be seen:
 
@@ -87,9 +98,9 @@ distribution of predicates can be seen:
 At this point it is noticeable that already in this reduced selection of
 predicates several ones contain the word "member" or "mp", which stands
 for *Member of Parliament* . A short investigation showed, that there
-are 52 different predicates related to membership and in total these 
+are 52 different predicates related to membership and in total these
 predicates, which are shown below, make 17% (588 out of 3309) of all
-found tuples.
+found triples.
 
 ```
 [
@@ -149,10 +160,48 @@ found tuples.
 
 ```
 
-These predicates contain different dimensions: 
+To visualize the extracted triples I used the networkx library for
+visualization. Initially, I limited the analysis to the first paragraph
+of each Wikipedia article. These are some results:
 
-* Relational: for, of, at, in, within
-* Temporal: is (now), (previously/formerly) was/been, is current(ly), is
-  former, since
+![Fig 2](img/graph_bernard_jenkin_round_1.png)
+
+![Fig 3](img/graph_margaret_beckett_round_1.png)
+
+![Fig 4](img/graph_mike_penning_round_1.png)
 
 
+### Round 2
+
+Within the second round every Wikipedia article was fully processed by
+OpenIE. As mentioned above, to provide a understandable visualization,
+the dataset had to be reduced. This was done by selecting only the
+nodes, that are somehow connected to the main node, which is the name of
+the politician. 
+
+These are the graphs of the Wikipedia articles shown in Round 1, but
+processed in this manner:
+
+![Fig 5](img/graph_bernard_jenkin_round_2.png)
+
+![Fig 6](img/graph_margaret_beckett_round_2.png)
+
+![Fig 7](img/graph_mike_penning_round_2.png)
+
+
+Additional, these figures provide interesting insights:
+
+![Fig 8](img/graph_kate_osamor_round_2.png)
+
+![Fig 9](img/graph_dawn_butler_round_2.png)
+
+
+
+Also some graphs became very large and should be in principle displayed
+in better ways ... 
+
+![Fig 10](img/graph_boris_johnson_round_2.png)
+
+... and others contain wrong or misleading information ...
+
+![Fig 11](img/graph_colleen_fletcher_round_2.png)
