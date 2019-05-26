@@ -53,44 +53,36 @@ nlp = StanfordCoreNLP('http://localhost:9000')
 After mining the new dataset, normalizing the Wikipedia articles and
 setting up the processing pipeline, which took quite long due to several
 software and compatibility issues, the CoreNLP processing results
-exemplary in the following:
+exemplary in the following for the MP Stephen Kinnock:
 
 ```
-Sentence: 
-	 'Stephen Nathan Kinnock (born 1 January 1970) is a British Labour Party politician who has been the Member of Parliament (MP) for Aberavon since the 2015 general election'
-Result:
-	 ('is', 'Kinnock', 'British')
-
-
-Sentence: 
-	 'His wife is the former Danish Prime Minister Helle Thorning-Schmidt'
-Result:
-	 ('is', 'His wife', 'former Danish Prime Minister Helle Thorning-Schmidt')
-	 ('is', 'His wife', 'former Prime Minister Helle Thorning-Schmidt')
-
-
-Sentence: 
-	 'His father, Neil Kinnock, is a former Leader of the British Labour Party and was a European Commissioner and Vice President of the European Commission'
-Result:
-	 ('was European Commissioner of', 'His father', 'Commission')
-	 ('was Commissioner of', 'His father', 'European Commission')
-	 ('father', 'His', 'Neil Kinnock')
-	 ('was', 'His father', 'Commissioner')
-	 ('is', 'His father', 'former Leader')
-	 ('was Commissioner of', 'His father', 'Commission')
-	 ('was', 'father', 'European')
-	 ('is former Leader of', 'His father', 'Labour Party')
-	 ('is former Leader of', 'His father', 'British Labour Party')
-	 ('was', 'His father', 'European Commissioner')
-	 ('was European Commissioner of', 'His father', 'European Commission')
-
-
-Sentence: 
-	 'His mother is a former Labour Party MEP.'
-Result:
-	 ('is', 'His mother', 'former Labour Party MEP')
-
+Stephen Kinnock:
+	'Stephen Nathan Kinnock (born 1 January 1970) is a British Labour Party politician who has been the Member of Parliament (MP) for Aberavon since the 2015 general election'
+		 ('is', 'Kinnock', 'British')
+	'His wife is the former Danish Prime Minister Helle Thorning-Schmidt'
+		 ('is', 'His wife', 'former Danish Prime Minister Helle Thorning-Schmidt')
+		 ('is', 'His wife', 'former Prime Minister Helle Thorning-Schmidt')
+	'His father, Neil Kinnock, is a former Leader of the British Labour Party and was a European Commissioner and Vice President of the European Commission'
+		 ('was European Commissioner of', 'His father', 'Commission')
+		 ('was Commissioner of', 'His father', 'European Commission')
+		 ('father', 'His', 'Neil Kinnock')
+		 ('was', 'His father', 'Commissioner')
+		 ('is', 'His father', 'former Leader')
+		 ('was Commissioner of', 'His father', 'Commission')
+		 ('was', 'father', 'European')
+		 ('is former Leader of', 'His father', 'Labour Party')
+		 ('is former Leader of', 'His father', 'British Labour Party')
+		 ('was', 'His father', 'European Commissioner')
+		 ('was European Commissioner of', 'His father', 'European Commission')
+	'His mother is a former Labour Party MEP.'
+		 ('is', 'His mother', 'former Labour Party MEP')
 ```
+
+Looking at all touples over all 650 Wikipedia articles of the members of
+UK House of Commons, which are detected by OpenIE, the following
+distribution of predicates can be seen:
+
+![Fig 01](img/predicates_pie_chart.png)
 
 ## Findings
 
