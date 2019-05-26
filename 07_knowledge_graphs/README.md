@@ -84,6 +84,50 @@ distribution of predicates can be seen:
 
 ![Fig 01](img/predicates_pie_chart.png)
 
-## Findings
+At this point it is noticeable that already in this reduced selection of
+predicates several ones contain the word "member". A short investigation
+showed, that there are 36 different predicates related to membership and
+in total these 36 predicates, which are shown below, make 17% (564 out
+of 3309) of all found touples.
 
-...
+```
+[
+    'been member for', 
+    'been member of', 
+    'been member since', 
+    'for member is', 
+    'in member is', 
+    'is also member of', 
+    'is conservative member for', 
+    'is conservative member of', 
+    'is current member for', 
+    'is current member of', 
+    'is currently member for', 
+    is currently member of', 
+    'is former member for', 
+    'is former member of', 
+    'is incumbent member for', 
+    'is incumbent member of', 
+    'is member for', 
+    'is member in', 
+    'is member of', 
+    'is member within', 
+    'is now member of', 
+    'locally is also member of', 
+    'locally is member of', 
+    'member at', 
+    'member for', 
+    'member of', 
+    'of member is', 
+    'previously been member for', 
+    'previously been member of', 
+    'since member is', 
+    'was formerly member for', 
+    'was formerly member of', 
+    'was member for', 
+    'was member of', 
+    'was previously member for', 
+    'was previously member of'  
+]
+
+```

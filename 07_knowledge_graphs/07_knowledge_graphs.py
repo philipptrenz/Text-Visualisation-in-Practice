@@ -94,6 +94,20 @@ def process_openie(df):
     return data
 
 
+def find_predicates_related_to_membership(data):
+    num_predicates = sum(data['predicates'].values())
+    member_predicates = list()
+    num_member_predicates = 0
+    for key in data['predicates']:
+        val = data['predicates'][key]
+        if 'member' in key:
+            member_predicates.append(key)
+            num_member_predicates += val
+    print(num_member_predicates, 'of', num_predicates, '(' + str(int(num_member_predicates/num_predicates*100)) + '%) member predicates,', len(member_predicates), 'different ones')
+
+    return member_predicates
+
+
 
 def plot_pie_chart_of_predicates(data, threshhold=0.6, show=False):
     counter = 0
@@ -144,14 +158,7 @@ if __name__ == '__main__':
         with open('data.json', 'r') as f:
             data = json.load(f)
 
-    plot_pie_chart_of_predicates(data, threshhold=0.7)
+    #plot_pie_chart_of_predicates(data, threshhold=0.7)
 
 
-
-
-
-
-
-
-
-
+    membership_predicates = find_predicates_related_to_membership(data)
