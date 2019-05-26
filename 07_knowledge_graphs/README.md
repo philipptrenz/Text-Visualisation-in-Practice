@@ -78,56 +78,81 @@ Stephen Kinnock:
 		 ('is', 'His mother', 'former Labour Party MEP')
 ```
 
-Looking at all touples over all 650 Wikipedia articles of the members of
+Looking at all tuples over all 650 Wikipedia articles of the members of
 UK House of Commons, which are detected by OpenIE, the following
 distribution of predicates can be seen:
 
 ![Fig 01](img/predicates_pie_chart.png)
 
 At this point it is noticeable that already in this reduced selection of
-predicates several ones contain the word "member". A short investigation
-showed, that there are 36 different predicates related to membership and
-in total these 36 predicates, which are shown below, make 17% (564 out
-of 3309) of all found touples.
+predicates several ones contain the word "member" or "mp", which stands
+for *Member of Parliament* . A short investigation showed, that there
+are 52 different predicates related to membership and in total these 
+predicates, which are shown below, make 17% (588 out of 3309) of all
+found tuples.
 
 ```
 [
-    'been member for', 
-    'been member of', 
-    'been member since', 
-    'for member is', 
-    'in member is', 
-    'is also member of', 
-    'is conservative member for', 
-    'is conservative member of', 
-    'is current member for', 
-    'is current member of', 
-    'is currently member for', 
-    is currently member of', 
-    'is former member for', 
-    'is former member of', 
-    'is incumbent member for', 
-    'is incumbent member of', 
-    'is member for', 
-    'is member in', 
-    'is member of', 
-    'is member within', 
-    'is now member of', 
-    'locally is also member of', 
-    'locally is member of', 
-    'member at', 
-    'member for', 
-    'member of', 
-    'of member is', 
-    'previously been member for', 
-    'previously been member of', 
-    'since member is', 
-    'was formerly member for', 
-    'was formerly member of', 
-    'was member for', 
-    'was member of', 
-    'was previously member for', 
-    'was previously member of'  
+	'been member for'
+	'been member of'
+	'been member since'
+	'been mp for'
+	'been mp in'
+	'been mp since'
+	'best mp on'
+	'for member is'
+	'in member is'
+	'is also member of'
+	'is conservative member for'
+	'is conservative member of'
+	'is current member for'
+	'is current member of'
+	'is currently female mp in'
+	'is currently member for'
+	'is currently member of'
+	'is currently mp in'
+	'is female mp in'
+	'is former member for'
+	'is former member of'
+	'is incumbent member for'
+	'is incumbent member of'
+	'is member for'
+	'is member in'
+	'is member of'
+	'is member within'
+	'is mp in'
+	'is now member of'
+	'locally is also member of'
+	'locally is member of'
+	'member at'
+	'member for'
+	'member of'
+	'mp for'
+	'mp in'
+	'mp on'
+	'mp since'
+	'of member is'
+	'previously been member for'
+	'previously been member of'
+	'previously was mp for'
+	'since member is'
+	'was formerly member for'
+	'was formerly member of'
+	'was member for'
+	'was member of'
+	'was mp for'
+	'was mp in'
+	'was previously member for'
+	'was previously member of'
+	'was youngest mp in'
 ]
 
 ```
+
+These predicates contain different dimensions: 
+
+* Relational: for, of, at, in, within
+* Temporal: is (now), (previously/formerly) was/been, is current(ly), is
+  former, since
+
+

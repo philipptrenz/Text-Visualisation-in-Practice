@@ -100,7 +100,8 @@ def find_predicates_related_to_membership(data):
     num_member_predicates = 0
     for key in data['predicates']:
         val = data['predicates'][key]
-        if 'member' in key:
+        if 'member' in key.lower() or 'mp ' in key.lower() or ' mp' in key.lower():
+
             member_predicates.append(key)
             num_member_predicates += val
     print(num_member_predicates, 'of', num_predicates, '(' + str(int(num_member_predicates/num_predicates*100)) + '%) member predicates,', len(member_predicates), 'different ones')
@@ -129,8 +130,6 @@ def plot_pie_chart_of_predicates(data, threshhold=0.6, show=False):
     # Data to plot
     labels = list(predicates_reduced.keys())
     sizes = list(predicates_reduced.values())
-    #colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
-    #explode = (0.1, 0, 0, 0)  # explode 1st slice
 
     def absolute_value(val):
         return int(np.round(val/100.*sum(sizes), 0))
@@ -160,5 +159,48 @@ if __name__ == '__main__':
 
     #plot_pie_chart_of_predicates(data, threshhold=0.7)
 
-
     membership_predicates = find_predicates_related_to_membership(data)
+
+
+
+    print('[')
+    for m in membership_predicates:
+        print('\t\'' + m + '\'')
+    print(']')
+
+
+    exit(0)
+
+
+    triples = []
+    for name in data['triples']:
+        for tuple in data['triples'][name]:
+            triples.append(tuple)
+
+
+
+    temp_keys_past = ['was', 'been', 'former', 'previous']
+
+    for triple in triples:
+        predicate = triple[0]
+        if predicate not in membership_predicates: continue
+
+        is_present = True
+        for k in temp_keys_past:
+            if k in predicate:
+                is_present = False
+                break
+
+        if is_present:
+            print('present:\t', triple)
+        else:
+            print('past   :\t', triple)
+
+
+
+    #is (now), (previously/formerly) was/been, is current(ly), is former, since
+    temp_tuple_present = []
+    temp_tuple_past = []
+
+    print(triples)
+
