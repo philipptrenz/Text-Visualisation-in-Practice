@@ -1,6 +1,6 @@
 # Knowledge graphs about the House of Commons (UK)
 
-> **Date:** 24.05. *(Due: 28.05.)*  
+> **Date:** 26.05. *(Due: 28.05.)*  
 > **Name:** `PhTr` Philipp Trenz  
 > **Code:**
 > [git](https://github.com/philipptrenz/Text-Visualisation-in-Practice/tree/master/07_knowledge_graphs)  
@@ -93,7 +93,7 @@ Looking at all triples over all 650 Wikipedia articles of the members of
 UK House of Commons, which are detected by OpenIE, the following
 distribution of predicates can be seen:
 
-![Fig 01](img/predicates_pie_chart.png)
+![Fig 01](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/predicates_pie_chart.png)
 
 At this point it is noticeable that already in this reduced selection of
 predicates several ones contain the word "member" or "mp", which stands
@@ -164,11 +164,11 @@ To visualize the extracted triples I used the networkx library for
 visualization. Initially, I limited the analysis to the first paragraph
 of each Wikipedia article. These are some results:
 
-![Fig 2](img/graph_bernard_jenkin_round_1.png)
+![Fig 2](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/graph_bernard_jenkin_round_1.png)
 
-![Fig 3](img/graph_margaret_beckett_round_1.png)
+![Fig 3](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/graph_margaret_beckett_round_1.png)
 
-![Fig 4](img/graph_mike_penning_round_1.png)
+![Fig 4](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/graph_mike_penning_round_1.png)
 
 
 ### Round 2
@@ -182,26 +182,26 @@ the politician.
 These are the graphs of the Wikipedia articles shown in Round 1, but
 processed in this manner:
 
-![Fig 5](img/graph_bernard_jenkin_round_2.png)
+![Fig 5](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/graph_bernard_jenkin_round_2.png)
 
-![Fig 6](img/graph_margaret_beckett_round_2.png)
+![Fig 6](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/graph_margaret_beckett_round_2.png)
 
-![Fig 7](img/graph_mike_penning_round_2.png)
+![Fig 7](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/graph_mike_penning_round_2.png)
 
 
 Additionally, these figures provide interesting insights:
 
-![Fig 8](img/graph_kate_osamor_round_2.png)
+![Fig 8](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/graph_kate_osamor_round_2.png)
 
-![Fig 9](img/graph_dawn_butler_round_2.png)
+![Fig 9](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/graph_dawn_butler_round_2.png)
 
 
 
 Also some graphs became very large ... 
 
-![Fig 10](img/graph_boris_johnson_round_2.png)
+![Fig 10](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/graph_boris_johnson_round_2.png)
 
 ... and others contain wrong or misleading information (not she but her
 mother died 1992) ...
 
-![Fig 11](img/graph_colleen_fletcher_round_2.png)
+![Fig 11](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/graph_colleen_fletcher_round_2.png)
