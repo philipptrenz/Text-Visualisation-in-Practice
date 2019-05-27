@@ -28,9 +28,9 @@ As a basis this
 
 ### Install
  
-To install CoreNLP the JavaSDK 1.8 as well as loading the compiled
-sources of the server is required. The scripts included in the
-repository provide an easy way to load an execute the CoreNLP server.
+To run CoreNLP the JavaSDK 1.8 as well as loading the compiled sources
+of the server is required. The scripts included in the repository
+provide an easy way to load an execute the CoreNLP server.
 
 ```bash
 # Load CoreNLP for OpenIE with Models for German
@@ -50,10 +50,12 @@ nlp = StanfordCoreNLP('http://localhost:9000')
 
 ## Result
 
-After mining the new dataset, normalizing the Wikipedia articles and
+After mining the new data set, normalizing the Wikipedia articles and
 setting up the processing pipeline, which took quite long due to several
-software and compatibility issues, the CoreNLP processing ring for the MP Stephen Kinnock:esults
-exemplary in the follow
+software and compatibility issues, the articles could be processed. 
+
+In the following the retrieved triples for the article about the MP
+Stephen Kinnock are shown:
 
 ```
 Stephen Kinnock:
@@ -81,17 +83,16 @@ Stephen Kinnock:
 
 As the dataset of the 650 Wikipedia articles is quite large, I began
 with a reduced dataset in **Round 1**, which was limited to the first
-paragraph of each article. In Round 2 instead, I used the first two
-paragraphs of each article, but to visualize the data appropriately, the
-visualization got reduced to only display triples, that contain the
-politicians name. I used the networkx library in Python for the
-visualization.
+paragraph of each article. In Round 2 instead, every article was fully
+processed. But to visualize the data appropriately, the triples got
+reduced to only display the ones, that relate to the politicians name.
+The networkx library in Python got used for the visualization.
 
 ### Round 1
 
-Looking at all triples over all 650 Wikipedia articles of the members of
-UK House of Commons, which are detected by OpenIE, the following
-distribution of predicates can be seen:
+Looking at all triples over the first paragraph of all 650 Wikipedia
+articles of the members of UK House of Commons, which are detected by
+OpenIE, the following distribution of predicates can be seen:
 
 ![Fig 01](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/predicates_pie_chart.png)
 
@@ -174,10 +175,11 @@ of each Wikipedia article. These are some results:
 ### Round 2
 
 Within the second round every Wikipedia article was fully processed by
-OpenIE. As mentioned above, to provide a understandable visualization,
-the dataset had to be reduced. This was done by selecting only the
-nodes, that are somehow connected to the main node, which is the name of
-the politician. 
+OpenIE. As mentioned above, to provide an meaningful visualization, the
+graph, generated from triples, had to be reduced. This was done by
+selecting only nodes, that are connected to the main node. But not only
+directly connected nodes were selected, but also every node that has a
+valid path to the main node, which is the name of the politician.
 
 These are the graphs of the Wikipedia articles shown in Round 1, but
 processed in this manner:
@@ -205,3 +207,15 @@ Also some graphs became very large ...
 mother died 1992) ...
 
 ![Fig 11](https://github.com/philipptrenz/Text-Visualisation-in-Practice/raw/master/07_knowledge_graphs/img/graph_colleen_fletcher_round_2.png)
+
+## Findings
+
+Knowledge graphs are a great tool to visualize and process information
+and its coherences from texts. To retrieve relevant information, e.g.
+for providing short informational summaries of MPs within the House of
+Commons, retrieving triples from articles is not enough. The triples,
+provided by OpenIE for example, has to be further processed and fit into
+a predefined [Ontology](https://en.wikipedia.org/wiki/Ontology). This
+task may require a lot of effort and fine tuning. Also not every
+retrieved triple provides correct or relevant information, so that also
+mechanisms to ensure correctness of information has to be implemented.
