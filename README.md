@@ -11,3 +11,14 @@ The seminar is geared to be a series of highly interactive sessions with the stu
 The second part of the seminar will consist of a project to be chosen by the student teams.
 >
 >--- Source: https://hpi.de/en/studies/courses/it-systems-engineering-ma/course/course/0/sommersemester-2019-text-visualization.html
+
+
+## Content
+
+1. [Visualize Controversy Of Wikipedia Articles By Its Revisions](01_intro/README.md)
+2. [Analysing Wikipedia articles about members of the German Bundestag](02_tfidf/README.md)
+3. [Wikipedia articles about members of the German Bundestag (extended)](03_dimension_reduction/README.md)
+4. [Insight into word embeddings based on wikipedia articles (or vice versa)](04_word_embeddings/README.md)
+5. [Topic Modeling on Wikipedia articles of politicians](05_topic_modeling/README.md)
+6. [Text graph, co-occurrance, fasttext and more](06_text_graphs/README.md)
+7. [Knowledge graphs about the House of Commons (UK)](07_knowledge_graphs/README.md)
